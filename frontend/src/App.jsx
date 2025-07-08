@@ -1,12 +1,10 @@
-import { useState } from 'react'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css'
 import { AuthProvider } from "./context/AuthContext";
-import LandingPage from "./pages/landingPage";
-// import Authentication from './pages/authPage';
+import LandingPage from "./pages/LandingPage";
+import AuthPage from "./pages/AuthPage"
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
 
   return (
     <>
@@ -15,7 +13,7 @@ function App() {
       <AuthProvider>
       <Routes>
             <Route path='/' element={<LandingPage />} />
-            {/* <Route path='/auth' element={<Authentication />} /> */}
+            <Route path='/auth' element={<AuthPage />} />
       </Routes>
       </AuthProvider>
      </Router>
@@ -23,5 +21,3 @@ function App() {
     </>
   )
 }
-
-export default App

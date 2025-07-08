@@ -1,19 +1,11 @@
-// /** @type {import('tailwindcss').Config} */
-// export default {
-//   content: [
-//     "./index.html",
-//     "./src/**/*.{js,ts,jsx,tsx}",
-//   ],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
-
-module.exports = {
-  plugins: [
-    require('tailwindcss'),
-    require('autoprefixer'),
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
-};
-
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}

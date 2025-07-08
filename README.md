@@ -1,1 +1,56 @@
 # VocalHealth
+
+VocalHealth is a web application with a Node.js/Express backend and a modern React frontend. This project is organized into two main folders: `backend` and `frontend`.
+
+## Installation
+
+First, clone the project to your local machine using the following command in your desired directory:
+
+```bash
+git clone https://github.com/Zahanboi/VocalHealth.git
+```
+
+Then, follow the instructions below to run the backend and frontend in separate terminals.
+
+## Project Structure
+
+```
+VocalHealth/
+├── backend/
+└── frontend/
+```
+
+## Getting Started
+
+### Backend
+
+1. Navigate to the backend directory:
+    ```bash
+    cd backend
+    ```
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+3. Start the server:
+    ```bash
+    npm run dev
+    ```
+    The backend will run on [http://localhost:8000](http://localhost:8000).
+
+### Frontend
+
+1. Navigate to the frontend directory:
+    ```bash
+    cd frontend
+    ```
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+3. Start the development server:
+    ```bash
+    npm run dev
+    ```
+    The frontend will run on [http://localhost:5173](http://localhost:5173).
+

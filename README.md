@@ -1,5 +1,9 @@
 # VocalHealth
 
+## Project Overview
+
+A basic description about the project is provided in the ppt [presentation](https://www.canva.com/design/DAGsOC_zwJM/eMYN14kZyyUACfZuyMpcmA/view?utm_content=DAGsOC_zwJM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha120e4347d).
+
 VocalHealth is a web application with a Node.js/Express backend and a modern React frontend. This project is organized into two main folders: `backend` and `frontend`.
 
 ## Installation

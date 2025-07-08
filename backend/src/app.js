@@ -22,8 +22,10 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(cookieParser());
 
 import userRouter from "./routes/userRoutes.js"
+import reportRouter from "./routes/report.routes.js";
 
 app.use("/api/users", userRouter);
+app.use("/api/reports", reportRouter)
 
 const startServer = async () => {
 

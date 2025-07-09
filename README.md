@@ -32,11 +32,16 @@ VocalHealth/
     ```bash
     cd backend
     ```
-2. Install dependencies:
+2. Copy the example environment file and update it with your credentials:
+    ```bash
+    cp .env.example .env
+    ```
+    Open `.env` and fill in the required environment variables.
+3. Install dependencies:
     ```bash
     npm install
     ```
-3. Start the server:
+4. Start the server:
     ```bash
     npm run dev
     ```

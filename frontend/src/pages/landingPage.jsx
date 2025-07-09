@@ -101,7 +101,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 const LandingPage = () => {
-  const { user } = useContext(AuthContext);
+  const { user , logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleNavigation = (path) => {
@@ -143,6 +143,14 @@ const LandingPage = () => {
             <>
               <Link to="/dashboard" className="text-gray-700 hover:text-blue-600 transition">Dashboard</Link>
               <Link to="/exercises" className="text-gray-700 hover:text-blue-600 transition">Exercises</Link>
+              <button
+                onClick={() => {
+                  logout();
+                }}
+                className="text-gray-700 hover:text-blue-600 transition font-semibold"
+              >
+                LogOut
+              </button>
               {/* <Link to="/health" className="text-gray-700 hover:text-blue-600 transition">Health Check</Link> */}
             </>
           ) : (
@@ -168,9 +176,9 @@ const LandingPage = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button 
-                onClick={() => handleNavigation('/dashboard')}
+                onClick={() => handleNavigation('/health')}
                 className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white rounded-2xl shadow-xl flex items-center gap-3 font-semibold text-lg transition transform hover:scale-105">
-                Go to Dashboard <ArrowRight size={20} />
+                Start Your Voice Journey <ArrowRight size={20} />
               </button>
               <button 
                 onClick={() => handleNavigation('/exercises')}

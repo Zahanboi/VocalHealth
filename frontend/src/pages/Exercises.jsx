@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import.meta.env.VITE_BACKEND_URL
 
 const Card = ({ children, className = "" }) => (
   <div className={`bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl border border-purple-100 transition-transform hover:scale-[1.01] ${className}`}>{children}</div>
@@ -129,7 +130,7 @@ const ExercisesPage = () => {
 
   const fetchExerciseProgress = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/exercises/progress", {
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/exercises/progress`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("accessToken")}` }
       });
       if (response.data.success) {
@@ -150,7 +151,7 @@ const ExercisesPage = () => {
       : [...current, exerciseId];
     setCompletedExercises(updated);
     try {
-      await axios.post("http://localhost:8000/api/exercises/track", { completedExercises: updated }, {
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/exercises/track`, { completedExercises: updated }, {
         headers: { Authorization: `Bearer ${localStorage.getItem("accessToken")}` }
       });
     } catch (error) {

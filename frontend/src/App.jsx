@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard';
 import ExercisesPage from './pages/Exercises';
 export default function App() {
 
+
   return (
     <>
     <div>
@@ -31,4 +32,5 @@ export default function App() {
     </div>
     </>
   )
+  
 }

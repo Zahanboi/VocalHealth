@@ -1,10 +1,12 @@
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import.meta.env.VITE_BACKEND_URL
+
 
 export const AuthContext = createContext();
 
-const API_URL = "http://localhost:8000/api/users";
+const API_URL = `${import.meta.env.VITE_BACKEND_URL}/api/users`;
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);

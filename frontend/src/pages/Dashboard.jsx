@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import moment from "moment-timezone";
 import { AuthContext } from "../context/AuthContext";
+import.meta.env.VITE_BACKEND_URL
 
 const Card = ({ children, className = "" }) => (
   <div className={`bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200 ${className}`}>{children}</div>
@@ -57,7 +58,7 @@ export default function Dashboard() {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/reports/dashboard-stats', {
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/reports/dashboard-stats`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("accessToken")}` }
       });
       setDashboardData(response.data.data);

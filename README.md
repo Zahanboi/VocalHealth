@@ -25,7 +25,47 @@ VocalHealth/
 ```
 
 ## Getting Started
+### AI
 
+1. Navigate to the `ai` directory:
+    ```bash
+    cd ai
+    ```
+2. Open a new terminal in this folder.
+
+3. Install Python 3.10.11 from [here](https://www.python.org/downloads/release/python-31011/). During installation, ensure you check "Add Python to PATH".
+
+4. After installation, verify the Python version:
+    ```bash
+    py -3.10 --version
+    ```
+    Confirm the output is `3.10.11`.
+5. (Optional) Delete any existing virtual environment:
+    ```powershell
+    Remove-Item -Recurse -Force venv
+    ```
+6. Create a new virtual environment with Python 3.10:
+    ```bash
+    py -3.10 -m venv venv
+    ```
+7. Activate the virtual environment:
+    ```powershell
+    .\venv\Scripts\Activate.ps1
+    ```
+8. Install dependencies:(run inside environment, let all install)
+    ```bash
+    pip install -r requirements.txt
+    ```
+9. Run the AI application:
+    ```bash
+    python main.py
+    ```
+
+10. Copy the example environment file and update it with your credentials:
+    ```bash
+    cp .env.example .env
+    ```
+    Open `.env` and fill in the required environment variables.   
 ### Backend
 
 1. Navigate to the backend directory:

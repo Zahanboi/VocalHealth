@@ -54,7 +54,7 @@ export const diagnose = wrapAsync(async (req, res) => {
     try {
         const formData = new FormData();
         formData.append("audio", fs.createReadStream(filePath));
-        const flaskResponse = await axios.post("http://127.0.0.1:8080/api/process_audio", formData, { headers: formData.getHeaders() });
+        const flaskResponse = await axios.post("http://127.0.0.1:8081/api/process_audio", formData, { headers: formData.getHeaders() });
         fs.unlink(filePath, () => {});
         if (!flaskResponse.data) return res.status(500).json({ success: false, message: "No response from AI model" });
         const { "Acoustic Features": acousticFeatures, "Confidence Scores": confidenceScores, "Findings": findings, "PDF_URL": pdfUrl, "Prediction": prediction } = flaskResponse.data;

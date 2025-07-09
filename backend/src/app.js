@@ -23,9 +23,11 @@ app.use(cookieParser());
 
 import userRouter from "./routes/userRoutes.js"
 import reportRouter from "./routes/reportRoutes.js";
+import exerciseRouter from "./routes/exerciseRoutes.js"
 
 app.use("/api/users", userRouter);
 app.use("/api/reports", reportRouter)
+app.use("/api/exercises", exerciseRouter)
 
 const startServer = async () => {
 

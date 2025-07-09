@@ -153,16 +153,20 @@ export default function Dashboard() {
               <div>
                 <div className="flex justify-between text-sm">
                   <span>Jitter</span>
-                  <span>{dashboardData.averages?.avgJitter?.toFixed(2) || "0"}%</span>
+                  <span>
+                    {dashboardData.averages?.avgJitter?.toFixed(2)}%
+                  </span>
                 </div>
-                <Progress value={(dashboardData.averages?.avgJitter / 3) * 100} />
+                <Progress value={Math.min((dashboardData.averages?.avgJitter / 3) * 100, 100)} />
               </div>
               <div>
                 <div className="flex justify-between text-sm">
                   <span>Shimmer</span>
-                  <span>{dashboardData.averages?.avgShimmer?.toFixed(2) || "0"}%</span>
+                  <span>
+                    {dashboardData.averages?.avgShimmer?.toFixed(2)}%
+                  </span>
                 </div>
-                <Progress value={(dashboardData.averages?.avgShimmer / 100) * 100} />
+                <Progress value={Math.min((dashboardData.averages?.avgShimmer / 100) * 100, 100)} />
               </div>
             </div>
           </Card>
@@ -176,7 +180,7 @@ export default function Dashboard() {
               <PieChart>
                 <Pie
                   data={Object.entries(dashboardData.predictionDistribution || {}).map(([name, value]) => ({ name, value }))}
-                  cx="50%"
+                  cx="66%"
                   cy="50%"
                   innerRadius={60}
                   outerRadius={80}
@@ -200,10 +204,10 @@ export default function Dashboard() {
             </div>
             <div className="text-center">
               <div className="text-3xl font-extrabold text-green-600">
-                {dashboardData.exerciseProgress?.completed || 0} / {dashboardData.exerciseProgress?.total || 9}
+                {Math.min(dashboardData.exerciseProgress?.completed || 0, dashboardData.exerciseProgress?.total || 9)} / {dashboardData.exerciseProgress?.total || 9}
               </div>
               <p className="text-gray-600">Exercises Completed</p>
-              <Progress value={(dashboardData.exerciseProgress?.completed / dashboardData.exerciseProgress?.total) * 100} className="mt-3" />
+              <Progress value={Math.min((dashboardData.exerciseProgress?.completed / (dashboardData.exerciseProgress?.total || 9)) * 100, 100)} className="mt-3" />
             </div>
           </Card>
         </div>

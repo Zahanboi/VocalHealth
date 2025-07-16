@@ -26,7 +26,7 @@ Then, follow the instructions below to run the ai, backend and frontend in separ
 
 ```
 VocalHealth/
-├──ai/
+├── ai/
 ├── backend/
 └── frontend/
 ```
@@ -100,7 +100,7 @@ VocalHealth/
     ```bash
     cd frontend
     ```
-2. Install dependencies:
+2. Install dependencies and put your Backend Server URL in env:
     ```bash
     npm install
     ```

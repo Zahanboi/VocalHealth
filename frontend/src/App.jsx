@@ -7,6 +7,7 @@ import AuthPage from "./pages/AuthPage";
 import HealthCheck from "./components/HealthCheck";
 import Dashboard from './pages/Dashboard';
 import ExercisesPage from './pages/Exercises';
+import NotFound from './pages/NotFound';
 export default function App() {
 
 
@@ -25,7 +26,7 @@ export default function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/exercises" element={<ExercisesPage />} />
              </Route>
-
+             <Route path="*" element={<NotFound />} />
       </Routes>
       </AuthProvider>
      </Router>
